@@ -1,0 +1,150 @@
+/* =========================================
+   1. ALGEMENE STIJLEN & RESET
+   ========================================= */
+body {
+    background-color: #000000; 
+    color: #ffffff;          
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Voorkomt horizontaal scrollen door animaties */
+}
+
+/* =========================================
+   2. NAVIGATIE (DESKTOP)
+   ========================================= */
+header {
+    background-color: #111111;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex; /* Naast elkaar op desktop */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700; /* Goud effect */
+}
+
+/* Hamburger Icoon (Standaard onzichtbaar op desktop) */
+.hamburger {
+    display: none; 
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+/* =========================================
+   3. HERO SECTIE & CONTENT
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-style: italic;
+    color: #cccccc;
+    font-size: 1.2rem;
+}
+
+.event-image {
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* =========================================
+   4. ANIMATIES (REVEAL)
+   ========================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(80px); /* Begint lager */
+    transition: all 1.2s ease-out; /* Gladde beweging */
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Wanneer JS de class 'active' toevoegt */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================
+   5. MEDIA QUERIES
+   ========================================= */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    .hamburger {
+        display: flex; /* Laat hamburger zien op mobiel */
+    }
+
+    nav ul {
+        display: none; /* Verberg menu op mobiel */
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Plakt onder de nav */
+        left: 0;
+        background-color: #111;
+        width: 100%;
+        text-align: center;
+        padding: 30px 0;
+        z-index: 999;
+    }
+
+    nav ul li {
+        margin: 15px 0;
+    }
+
+    /* Wanneer je op de hamburger klikt, voegt JS 'active' toe aan de UL */
+    nav ul.active {
+        display: flex;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
