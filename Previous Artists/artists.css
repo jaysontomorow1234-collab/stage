@@ -19,8 +19,7 @@ body {
    ========================================= */
 header {
     background-color: #494040;
-    padding: 15px 0;
-    width: 100%;
+    padding: 20px 0px;
     position: sticky;
     top: 0;
     z-index: 1000;
