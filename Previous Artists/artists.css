@@ -1,0 +1,198 @@
+/* =========================================
+   RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: white;
+    font-family: sans-serif;
+    line-height: 1.6;
+}
+
+/* =========================================
+   NAVIGATION & HAMBURGER (DESKTOP)
+   ========================================= */
+header {
+    background-color: #494040;
+    padding: 15px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Logo links, links rechts */
+    align-items: center;
+    max-width: 1200px; /* Zelfde breedte als homepage */
+    margin: 0 auto; /* Centreert de hele nav balk */
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.nav-links {
+    display: flex; /* Dit zet de links naast elkaar */
+    list-style: none;
+    gap: 30px; /* Ruimte tussen de links */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: #ffd700;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background: white;
+    display: block;
+}
+
+/* =========================================
+   ARTISTS PAGE HEADER
+   ========================================= */
+.artists-header {
+    padding: 120px 20px 60px;
+    text-align: center;
+}
+
+.artists-header h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(to right, #ffffff, #ffd700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.artists-header p {
+    color: #888;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   ARTISTS GRID & CARDS
+   ========================================= */
+.artists-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 100px;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.artist-card {
+    background: #0f0f0f;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 1px solid #222;
+    transition: all 0.4s ease;
+}
+
+.artist-image {
+    width: 100%;
+    aspect-ratio: 3/4; /* Keeps all posters consistent */
+    overflow: hidden;
+}
+
+.artist-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.artist-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.artist-info h3 {
+    color: #fff;
+    margin-bottom: 5px;
+    font-size: 1.4rem;
+}
+
+.artist-info p {
+    color: #f97316; /* Orange accent */
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* =========================================
+   HOVER EFFECTS
+   ========================================= */
+.artist-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffd700;
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+.artist-card:hover .artist-image img {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   MEDIA QUERIES (MOBILE)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .artists-header h1 { 
+        font-size: 2.5rem; 
+    }
+
+    /* Hamburger visibility */
+    .hamburger {
+        display: flex; 
+    }
+
+    /* Mobile Menu styles */
+    .nav-links {
+        display: none; 
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #111;
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    /* Show menu when active class is added via JS */
+    .nav-links.active {
+        display: flex;
+    }
+}
