@@ -51,6 +51,10 @@ nav ul li a:hover {
     color: #ffd700; /* Goud effect */
 }
 
+.nav-links a:hover, .nav-links a.active {
+    color: #ffd700;
+}
+
 /* Hamburger Icoon (Standaard onzichtbaar op desktop) */
 .hamburger {
     display: none; 
